@@ -9,3 +9,21 @@
 .header-section img {
     height: 32px;
 }
+
+.footer-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+    padding: var(--content-limitation);
+    background-color: var(--main-color);
+    color: white;
+}
+
+.footer-section a {
+    color: white;
+
+    &:hover {
+        scale: 1.1;
+    }
+}
