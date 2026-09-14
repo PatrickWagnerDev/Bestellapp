@@ -2,4 +2,5 @@
     --main-color: #E76C1F;
     --secondary-color: #363534;
     --option-background-color: #FDEADC;
+    --content-limitation: 20px max(calc((100% - 1440px)/2), clamp(16px, 10vw, 140px));
 }

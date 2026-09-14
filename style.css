@@ -1,0 +1,11 @@
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--content-limitation);
+    background-color: var(--main-color);
+}
+
+.header-section img {
+    height: 32px;
+}
