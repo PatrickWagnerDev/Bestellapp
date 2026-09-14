@@ -15,6 +15,39 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+}
+
+.hero-image {
+    display: block;
+    width: 100%;
+    max-height: 50dvh;
+    object-fit: cover;
+}
+
+.restaurant-logo {
+    position: absolute;
+    width: 100px;
+    left: 50%;
+    bottom: 0%;
+    transform: translate(-50%, 50%);
+    object-fit: cover;
+    border: 16px solid var(--option-background-color);
+    border-radius: 50%;
+}
+
+.hero-section p {
+    font-weight: bold;
+}
+
+.title-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.title-wrapper img {
+    height: 24px;
 }
 
 .footer-section {
