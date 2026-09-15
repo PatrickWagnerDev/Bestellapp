@@ -82,6 +82,10 @@
     color: white;
 }
 
+.basket h2 {
+    padding-bottom: 16px;
+}
+
 .basket-infill {
     display: flex;
     flex-direction: column;
