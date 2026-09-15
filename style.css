@@ -70,6 +70,48 @@
     margin-top: -32px;
 }
 
+.menu-part-wrapper {
+    padding: var(--content-limitation);
+}
+
+.menu-part {
+    display: flex;
+    gap: 16px;
+    background-color: var(--option-background-color);
+    padding: 8px;
+    margin: 8px 0;
+    border-radius: 16px;
+    width: 750px;
+}
+
+.menu-description {
+    display: flex;
+    gap: 16px;
+}
+
+.menu-price {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.menu-price p {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.menu-price button {
+    background-color: white;
+    border: 0 solid black;
+    border-radius: 16px;
+    cursor: pointer;
+    &:hover {
+        scale: 1.1;
+        box-shadow: 2px 2px 2px black;
+    }
+}
+
 .footer-section {
     display: flex;
     justify-content: center;
