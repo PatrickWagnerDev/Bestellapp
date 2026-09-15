@@ -15,7 +15,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.hero-wrapper {
+    width: 100%;
     position: relative;
+    margin-bottom: 75px;
 }
 
 .hero-image {
@@ -29,7 +34,7 @@
     position: absolute;
     width: 150px;
     left: 50%;
-    bottom: 25%;
+    bottom: 0;
     transform: translate(-50%, 50%);
     object-fit: cover;
     border: 16px solid var(--option-background-color);
