@@ -15,6 +15,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-bottom: 48px;
 }
 
 .hero-wrapper {
@@ -53,6 +54,20 @@
 
 .title-wrapper img {
     height: 24px;
+}
+
+.menu-header {
+    display: flex;
+    align-items: flex-end;
+    padding: var(--menu-limitation);
+    gap: 16px;
+    background-color: var(--main-color);
+    color: white;
+}
+
+.menu-header img {
+    width: 64px;
+    margin-top: -32px;
 }
 
 .footer-section {
