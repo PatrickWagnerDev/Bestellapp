@@ -56,6 +56,34 @@
     height: 24px;
 }
 
+.content-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+}
+
+.menu-wrapper {
+ width: 100% - 500px;
+}
+
+.basket-wrapper {
+    width: 500px;
+    flex-grow: 1;
+}
+
+.basket {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 16px;
+    width: 100%;
+    border-radius: 16px 0 0 16px;
+    position: sticky;
+    top: 0;
+    background-color: var(--secondary-color);
+    color: white;
+}
+
 .menu-header {
     display: flex;
     align-items: flex-end;
