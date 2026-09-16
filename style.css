@@ -241,6 +241,17 @@ main {
     border-top: 2px solid white;
 }
 
+.basket-dialog {
+    display: flex;
+    background-color: var(--secondary-color);
+    color: white;
+    position: sticky;
+    bottom: 0;
+    left: calc(50% - 200px);
+    border: 0 solid transparent;
+    border-radius: 16px;
+}
+
 .footer-section {
     display: flex;
     justify-content: center;
