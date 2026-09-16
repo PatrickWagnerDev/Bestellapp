@@ -1,3 +1,13 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+}
+
+main {
+    flex: 1;
+}
+
 .header-section {
     display: flex;
     justify-content: space-between;
@@ -61,7 +71,7 @@
     flex-direction: row;
     flex-grow: 1;
     gap: 16px;
-    padding: var(--menu-limitation);
+    padding: var(--content-limitation);
 }
 
 .menu-wrapper {
@@ -92,7 +102,6 @@
     gap: 16px;
     background-color: var(--option-background-color);
     padding: 8px;
-    margin: 8px 0;
     border-radius: 16px;
     width: 750px;
 }
@@ -134,7 +143,7 @@
 .basket {
     padding: 16px;
     width: 100%;
-    border-radius: 16px 0 0 16px;
+    border-radius: 16px;
     position: sticky;
     top: 8px;
     background-color: var(--secondary-color);
