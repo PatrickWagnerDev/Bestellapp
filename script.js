@@ -1,12 +1,14 @@
 const MY_MENU = document.getElementById('menu-content');
 
 function init() {
-    renderBurger();
+    renderMenu();
 }
 
 function renderMenu() {
     MY_MENU.innerHTML = templateMenu();
-
+    renderBurger();
+    renderPizza();
+    renderSalad();
 }
 
 function renderBurger() {
@@ -14,6 +16,7 @@ function renderBurger() {
     for (let i = 0; i < products.burger.length; i++) {
         MY_BURGER.innerHTML += templateBurgerMenu(i);
     }
+}
 
 function renderPizza() {
     const MY_PIZZA = document.getElementById('pizza-menu');
@@ -27,3 +30,4 @@ function renderSalad() {
     for (let i = 0; i < products.salad.length; i++) {
         MY_SALAD.innerHTML += templateSaladMenu(i);
     }
+}
