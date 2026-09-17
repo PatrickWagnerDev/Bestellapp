@@ -1,4 +1,5 @@
 const MY_MENU = document.getElementById('menu-content');
+const MY_BASKET = document.getElementById('basket-contet')
 
 function init() {
     renderMenu();
