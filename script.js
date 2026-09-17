@@ -4,6 +4,11 @@ function init() {
     renderBurger();
 }
 
+function renderMenu() {
+    MY_MENU.innerHTML = templateMenu();
+    
+}
+
 function renderBurger() {
     let myBurgerList = "";
     for (let i = 0; i < products.burger.length; i++) {
