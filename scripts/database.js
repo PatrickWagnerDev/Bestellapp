@@ -24,7 +24,7 @@ let products = [
                 "ingredients": "Chicken, Cheese, Tomatoes, Lettuce, Onion, Bell pepper",
                 "price": 15.90,
                 "image": "./assets/image/Big_chicken_burger.png"
-            },
+            }
         ]
     },
     {
@@ -52,7 +52,35 @@ let products = [
                 "ingredients": "Chicken, Mozzarella, Gorgonzola, Fontina,  Parmigiano Reggiano",
                 "price": 15.90,
                 "image": "./assets/image/Quattro Formaggi with Chicken.png"
-            },
+            }
         ]
     },
+    {
+        "salad": [
+            {
+                "name": "Warm beef arugula salad",
+                "ingredients": "Beef, Arugula, Field salad, Greek feta, Cherry tomatoes, Sun-dried Tomatoes, Balsamic-vinegar dressinga",
+                "price": 16.90,
+                "image": "./assets/image/Warm_beef_arugula_salad.png"
+            },
+            {
+                "name": "Mini green Salad",
+                "ingredients": "Green salad, Cucumber, Carrots, Parsley, Radishes",
+                "price": 7.90,
+                "image": "./assets/image/Mini_green_Salad.png"
+            },
+            {
+                "name": "Green Salad with sea food",
+                "ingredients": "Mixed greens, Cherry tomatoes, Red onion, Mussels, Squid rings, Shrimp, Dijon mustard-lemon dressing with dill",
+                "price": 16.90,
+                "image": "./assets/image/Green_Salad_with_sea_food.png"
+            },
+            {
+                "name": "Vegan green salad with tofu",
+                "ingredients": "Green salad, Cherry tomatoes, Cucumber, Baby spinach, Edamame, Radishes, Bittercress, Tofu, Peanuts",
+                "price": 14.90,
+                "image": "./assets/image/Vegan_green_salad_with_tofu.png"
+            }
+        ]
+    }
 ]
