@@ -49,3 +49,29 @@ function templatePizzaMenu(i) {
         </article>
     `;
 }
+
+function templateSaladMenu(i) {
+    return /*html*/`
+        <article class="menu-part">
+            <img src="${products.salad[i].image}" alt="Veggie mushroom black burger">
+            <section class="menu-description">
+                <article>
+                    <h3>
+                        ${products.salad[i].name}
+                    </h3>
+                    <p>
+                        ${products.salad[i].ingredients}
+                    </p>
+                </article>
+                <article class="menu-price">
+                    <p>
+                        ${products.salad[i].price.toFixed(2).replace(".", ",")}€
+                    </p>
+                    <button>
+                        Add to basket
+                    </button>
+                </article>
+            </section>
+        </article>
+    `;
+}
