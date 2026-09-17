@@ -20,10 +20,10 @@ function renderPizza() {
     return myPizzaList;
 }
 
-function renderBurger() {
-    let myBurgerList = "";
-    for (let i = 0; i < products.burger.length; i++) {
-        myBurgerList += templateBurgerMenu(i);
+function renderSalad() {
+    let mySaladList = "";
+    for (let i = 0; i < products.salad.length; i++) {
+        mySaladList += templateSaladMenu(i);
     }
-    return myBurgerList;
+    return mySaladList;
 }
