@@ -30,7 +30,6 @@ function templateMenu() {
     `;
 }
 
-
 function templateBurgerMenu(i) {
     return /*html*/`
         <article class="menu-part">
@@ -105,6 +104,94 @@ function templateSaladMenu(i) {
                     </button>
                 </article>
             </section>
+        </article>
+    `;
+}
+
+function templateBasket(i) {
+    return /*html*/`
+        <article class="basket">
+            <div class="basket-infill">
+                <header>
+                    <h2>
+                        Your Basket
+                    </h2>
+                </header>
+                <section class="basket-part">
+                    <p>
+                        1x Veggie mushroom black burger
+                    </p>
+                    <div class="basket-part-number">
+                        <div class="basket-number">
+                            <button>
+                                <img src="assets/icons/delete_icon.png" alt="Delete Button">
+                            </button>
+                            <p>1</p>
+                            <button>
+                                +
+                            </button>
+                        </div>
+                        <p>
+                            16,90€
+                        </p>
+                    </div>
+                </section>
+                <section class="basket-part">
+                    <p>
+                        1x Veggie mushroom black burger
+                    </p>
+                    <div class="basket-part-number">
+                        <div class="basket-number">
+                            <button>
+                                <img src="assets/icons/delete_icon.png" alt="Delete Button">
+                            </button>
+                            <p>1</p>
+                            <button>
+                                +
+                            </button>
+                        </div>
+                        <p>
+                            16,90€
+                        </p>
+                    </div>
+                </section>
+                <section class="basket-part">
+                    <p>
+                        1x Veggie mushroom black burger
+                    </p>
+                    <div class="basket-part-number">
+                        <div class="basket-number">
+                            <button>
+                                <img src="assets/icons/delete_icon.png" alt="Delete Button">
+                            </button>
+                            <p>1</p>
+                            <button>
+                                +
+                            </button>
+                        </div>
+                        <p>
+                            16,90€
+                        </p>
+                    </div>
+                </section>
+                <section class="price-wrapper">
+                    <article class="price-part">
+                        <p>Subtotal</p>
+                        <p>36,70€</p>
+                    </article>
+                    <article class="price-part">
+                        <p>Delivery fee</p>
+                        <p>4,99€</p>
+                    </article>
+                    <article class="price-part-total">
+                        <p>Total</p>
+                        <p>41,69€</p>
+                    </article>
+                    <button>
+                        <p>Buy now (41,69€)</p>
+                    </button>
+                </section>
+            </div>
         </article>
     `;
 }
