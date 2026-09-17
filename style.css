@@ -224,7 +224,7 @@ main {
     cursor: pointer;
 
     &:hover {
-        scale: 1.1;
+        background-color: var(--button-hover);
         box-shadow: 2px 2px 2px black;
     }
 }
@@ -267,7 +267,7 @@ main {
     display: none;
 }
 
-.nav-basketbutton {
+.nav-basket button {
     display: flex;
     justify-content: center;
     width: 300px;
@@ -281,7 +281,7 @@ main {
     cursor: pointer;
 
     &:hover {
-        scale: 1.1;
+        background-color: var(--button-hover);
         box-shadow: 2px 2px 2px black;
     }
 }
