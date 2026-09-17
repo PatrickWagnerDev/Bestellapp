@@ -27,4 +27,32 @@ let products = [
             },
         ]
     },
+    {
+        "pizza": [
+            {
+                "name": "Pizza Margherita",
+                "ingredients": "Tomato Sauce, Mozzarella",
+                "price": 11.90,
+                "image": "./assets/image/Pizza_Margherita.png"
+            },
+            {
+                "name": "Pizza Chorizo",
+                "ingredients": "Tomato slices, Mozzarella, Chorizo",
+                "price": 13.90,
+                "image": "./assets/image/Pizza_Chorizo.png"
+            },
+            {
+                "name": "Pizza Funghi",
+                "ingredients": "Red onion, Olives, Button Mushrooms, Mozzarella",
+                "price": 12.90,
+                "image": "./assets/image/Funghi.png"
+            },
+            {
+                "name": "Quattro Formaggi with Chicken",
+                "ingredients": "Chicken, Mozzarella, Gorgonzola, Fontina,  Parmigiano Reggiano",
+                "price": 15.90,
+                "image": "./assets/image/Quattro Formaggi with Chicken.png"
+            },
+        ]
+    },
 ]
