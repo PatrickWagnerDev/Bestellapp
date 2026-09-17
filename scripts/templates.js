@@ -1,4 +1,4 @@
-function templateMenu(i) {
+function templateMenu() {
     return /*html*/`
         <section class="menu-section">
             <header class="menu-header">
@@ -7,8 +7,27 @@ function templateMenu(i) {
                     Burger & Sandwiches
                 </h2>
             </header>
-            <main class="menu-part-wrapper"></main>
-    `
+            <main id="burger-menu" class="menu-part-wrapper"></main>
+        </section>
+        <section class="menu-section">
+            <header class="menu-header">
+                <img src="./assets/icons/Pizza_icon.png" alt="Pizza Icon">
+                <h2>
+                    Pizza
+                </h2>
+            </header>
+            <main id="pizza-menu" class="menu-part-wrapper"></main>
+        </section>
+        <section class="menu-section">
+            <header class="menu-header">
+                <img src="./assets/icons/Salad_icon.png" alt="Salad Icon">
+                <h2>
+                    Salad
+                </h2>
+            </header>
+            <main id="salad-menu" class="menu-part-wrapper"></main>
+        </section>
+    `;
 }
 
 
