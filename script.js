@@ -6,29 +6,24 @@ function init() {
 
 function renderMenu() {
     MY_MENU.innerHTML = templateMenu();
-    
+
 }
 
 function renderBurger() {
-    let myBurgerList = "";
+    const MY_BURGER = document.getElementById('burger-menu');
     for (let i = 0; i < products.burger.length; i++) {
-        myBurgerList += templateBurgerMenu(i);
+        MY_BURGER.innerHTML += templateBurgerMenu(i);
     }
-    return myBurgerList;
-}
 
 function renderPizza() {
-    let myPizzaList = "";
+    const MY_PIZZA = document.getElementById('pizza-menu');
     for (let i = 0; i < products.pizza.length; i++) {
-        myPizzaList += templatePizzaMenu(i);
+        MY_PIZZA.innerHTML += templatePizzaMenu(i);
     }
-    return myPizzaList;
 }
 
 function renderSalad() {
-    let mySaladList = "";
+    const MY_SALAD = document.getElementById('salad-menu');
     for (let i = 0; i < products.salad.length; i++) {
-        mySaladList += templateSaladMenu(i);
+        MY_SALAD.innerHTML += templateSaladMenu(i);
     }
-    return mySaladList;
-}
