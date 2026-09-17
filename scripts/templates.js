@@ -1,3 +1,17 @@
+function templateMenu(i) {
+    return /*html*/`
+        <section class="menu-section">
+            <header class="menu-header">
+                <img src="./assets/icons/Burger_icon.png" alt="Burger Icon">
+                <h2>
+                    Burger & Sandwiches
+                </h2>
+            </header>
+            <main class="menu-part-wrapper"></main>
+    `
+}
+
+
 function templateBurgerMenu(i) {
     return /*html*/`
         <article class="menu-part">
