@@ -8,8 +8,8 @@ function init() {
 function renderMenu() {
     MY_MENU.innerHTML = templateMenu();
     renderBurger(products.burger);
-    renderPizza();
-    renderSalad();
+    renderPizza(products.pizza);
+    renderSalad(products.salad);
 }
 
 function renderBurger(array) {
@@ -19,16 +19,16 @@ function renderBurger(array) {
     }
 }
 
-function renderPizza() {
+function renderPizza(array) {
     const MY_PIZZA = document.getElementById('pizza-menu');
-    for (let i = 0; i < products.pizza.length; i++) {
+    for (let i = 0; i < array.length; i++) {
         MY_PIZZA.innerHTML += templatePizzaMenu(i);
     }
 }
 
-function renderSalad() {
+function renderSalad(array) {
     const MY_SALAD = document.getElementById('salad-menu');
-    for (let i = 0; i < products.salad.length; i++) {
+    for (let i = 0; i < array.length; i++) {
         MY_SALAD.innerHTML += templateSaladMenu(i);
     }
 }
