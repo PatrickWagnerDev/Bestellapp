@@ -7,14 +7,14 @@ function init() {
 
 function renderMenu() {
     MY_MENU.innerHTML = templateMenu();
-    renderBurger();
+    renderBurger(products.burger);
     renderPizza();
     renderSalad();
 }
 
-function renderBurger() {
+function renderBurger(array) {
     const MY_BURGER = document.getElementById('burger-menu');
-    for (let i = 0; i < products.burger.length; i++) {
+    for (let i = 0; i < array.length; i++) {
         MY_BURGER.innerHTML += templateBurgerMenu(i);
     }
 }
