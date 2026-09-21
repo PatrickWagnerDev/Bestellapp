@@ -1,6 +1,6 @@
 const MY_MENU = document.getElementById('menu-content');
 const MY_BASKET = document.getElementById('basket-content');
-const MY_ORDER = document.getElementById('basket-orders');
+
 
 function init() {
     renderMenu();
@@ -40,5 +40,6 @@ function renderBasket() {
 }
 
 function addOrder(i) {
+    const MY_ORDER = document.getElementById('basket-orders');
     MY_ORDER.innerHTML += templateBasketOrder(i);
 }
