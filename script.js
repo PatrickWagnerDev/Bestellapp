@@ -1,5 +1,6 @@
 const MY_MENU = document.getElementById('menu-content');
 const MY_BASKET = document.getElementById('basket-content');
+const MY_ORDER = document.getElementById('basket-orders');
 
 function init() {
     renderMenu();
@@ -36,10 +37,13 @@ function renderSalad(array) {
 
 function renderBasket() {
     MY_BASKET.innerHTML = templateBasket();
-    const MY_ORDER = document.getElementById('basket-orders');
     MY_ORDER.innerHTML = /*html*/`
         <p>
             Ready for your Order &#128522;
         </p>
     `;
+}
+
+function addOrder(i) {
+    MY_ORDER.innerHTML += templateBasketOrder(i);
 }
