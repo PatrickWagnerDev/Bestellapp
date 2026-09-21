@@ -73,7 +73,7 @@ function templatePizzaMenu(i) {
                     <p>
                         ${products.pizza[i].price.toFixed(2).replace(".", ",")}€
                     </p>
-                    <button>
+                    <button onclick="addOrder(products.pizza[${i}])">
                         Add to basket
                     </button>
                 </article>
@@ -99,7 +99,7 @@ function templateSaladMenu(i) {
                     <p>
                         ${products.salad[i].price.toFixed(2).replace(".", ",")}€
                     </p>
-                    <button>
+                    <button onclick="addOrder(products.salad[${i}])">
                         Add to basket
                     </button>
                 </article>
