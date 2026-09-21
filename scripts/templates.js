@@ -152,13 +152,13 @@ function templateBasketOrder(i) {
                     <button>
                         <img src="assets/icons/delete_icon.png" alt="Delete Button">
                     </button>
-                    <p>1</p>
+                    <p>${i.order}</p>
                     <button>
                         +
                     </button>
                 </div>
                 <p>
-                    16,90€
+                    ${i.price.toFixed(2).replace(".", ",") * i.order} €
                 </p>
             </div>
         </article>
