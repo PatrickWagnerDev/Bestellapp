@@ -178,6 +178,7 @@ main {
     display: flex;
     align-items: center;
     height: 300px;
+    width: 100%;
 }
 
 .basket-part {
