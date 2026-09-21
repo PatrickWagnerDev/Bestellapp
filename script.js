@@ -1,8 +1,9 @@
 const MY_MENU = document.getElementById('menu-content');
-const MY_BASKET = document.getElementById('basket-contet')
+const MY_BASKET = document.getElementById('basket-contet');
 
 function init() {
     renderMenu();
+    renderBasket();
 }
 
 function renderMenu() {
@@ -31,4 +32,14 @@ function renderSalad(array) {
     for (let i = 0; i < array.length; i++) {
         MY_SALAD.innerHTML += templateSaladMenu(i);
     }
+}
+
+function renderBasket() {
+    MY_BASKET.innerHTML = templateBasket();
+    const MY_ORDER = document.getElementById('basket-orders');
+    MY_ORDER.innerHTML = /*html*/`
+        <p>
+            Ready for your Order &#128522;
+        </p>
+    `;
 }

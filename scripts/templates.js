@@ -118,7 +118,6 @@ function templateBasket() {
                     </h2>
                 </header>
                 <section id="basket-orders">
-                    
                 </section>
                 <section class="price-wrapper">
                     <article class="price-part">
