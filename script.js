@@ -37,11 +37,6 @@ function renderSalad(array) {
 
 function renderBasket() {
     MY_BASKET.innerHTML = templateBasket();
-    MY_ORDER.innerHTML = /*html*/`
-        <p>
-            Ready for your Order &#128522;
-        </p>
-    `;
 }
 
 function addOrder(i) {
