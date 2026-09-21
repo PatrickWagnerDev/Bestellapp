@@ -117,7 +117,7 @@ function templateBasket() {
                         Your Basket
                     </h2>
                 </header>
-                <section id="basket-orders">
+                <section id="basket-orders" class="basket-order">
                 </section>
                 <section class="price-wrapper">
                     <article class="price-part">
