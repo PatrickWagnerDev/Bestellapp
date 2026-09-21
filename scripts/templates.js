@@ -108,7 +108,7 @@ function templateSaladMenu(i) {
     `;
 }
 
-function templateBasket(i) {
+function templateBasket() {
     return /*html*/`
         <article class="basket">
             <div class="basket-infill">
@@ -117,62 +117,8 @@ function templateBasket(i) {
                         Your Basket
                     </h2>
                 </header>
-                <section class="basket-part">
-                    <p>
-                        1x Veggie mushroom black burger
-                    </p>
-                    <div class="basket-part-number">
-                        <div class="basket-number">
-                            <button>
-                                <img src="assets/icons/delete_icon.png" alt="Delete Button">
-                            </button>
-                            <p>1</p>
-                            <button>
-                                +
-                            </button>
-                        </div>
-                        <p>
-                            16,90€
-                        </p>
-                    </div>
-                </section>
-                <section class="basket-part">
-                    <p>
-                        1x Veggie mushroom black burger
-                    </p>
-                    <div class="basket-part-number">
-                        <div class="basket-number">
-                            <button>
-                                <img src="assets/icons/delete_icon.png" alt="Delete Button">
-                            </button>
-                            <p>1</p>
-                            <button>
-                                +
-                            </button>
-                        </div>
-                        <p>
-                            16,90€
-                        </p>
-                    </div>
-                </section>
-                <section class="basket-part">
-                    <p>
-                        1x Veggie mushroom black burger
-                    </p>
-                    <div class="basket-part-number">
-                        <div class="basket-number">
-                            <button>
-                                <img src="assets/icons/delete_icon.png" alt="Delete Button">
-                            </button>
-                            <p>1</p>
-                            <button>
-                                +
-                            </button>
-                        </div>
-                        <p>
-                            16,90€
-                        </p>
-                    </div>
+                <section id="basket-orders">
+                    
                 </section>
                 <section class="price-wrapper">
                     <article class="price-part">
@@ -194,4 +140,28 @@ function templateBasket(i) {
             </div>
         </article>
     `;
+}
+
+function templateBasketOrder(i) {
+    return /*html*/`
+        <article class="basket-part">
+            <p>
+                1x Veggie mushroom black burger
+            </p>
+            <div class="basket-part-number">
+                <div class="basket-number">
+                    <button>
+                        <img src="assets/icons/delete_icon.png" alt="Delete Button">
+                    </button>
+                    <p>1</p>
+                    <button>
+                        +
+                    </button>
+                </div>
+                <p>
+                    16,90€
+                </p>
+            </div>
+        </article>
+    `
 }
