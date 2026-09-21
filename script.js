@@ -41,5 +41,6 @@ function renderBasket() {
 
 function addOrder(i) {
     const MY_ORDER = document.getElementById('basket-orders');
+    i.order++;
     MY_ORDER.innerHTML += templateBasketOrder(i);
 }

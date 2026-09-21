@@ -158,7 +158,7 @@ function templateBasketOrder(i) {
                     </button>
                 </div>
                 <p>
-                    ${i.price.toFixed(2).replace(".", ",") * i.order} €
+                    ${i.price.toFixed(2).replace(".", ",")} €
                 </p>
             </div>
         </article>
