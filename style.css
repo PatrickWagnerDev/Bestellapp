@@ -176,9 +176,12 @@ main {
 
 .basket-order {
     display: flex;
+    flex-direction: column;
     align-items: center;
     height: 300px;
+    max-height: 300px;
     width: 100%;
+    overflow-y: scroll;
 }
 
 .basket-part {

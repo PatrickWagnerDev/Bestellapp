@@ -152,7 +152,7 @@ function templateBasketOrder(i) {
                     <button>
                         <img src="assets/icons/delete_icon.png" alt="Delete Button">
                     </button>
-                    <p>${i.order}</p>
+                    <p id="basket-order${i.name}">${i.order}</p>
                     <button>
                         +
                     </button>

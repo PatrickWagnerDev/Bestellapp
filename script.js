@@ -41,6 +41,11 @@ function renderBasket() {
 
 function addOrder(i) {
     const MY_ORDER = document.getElementById('basket-orders');
+    const EXISTING_ORDER = document.getElementById("basket-order"+i.name);
     i.order++;
-    MY_ORDER.innerHTML += templateBasketOrder(i);
+    if (EXISTING_ORDER) {
+        document.getElementById("basket-order"+i.name).textContent = i.order;
+    } else {
+        MY_ORDER.innerHTML += templateBasketOrder(i);
+    }
 }
