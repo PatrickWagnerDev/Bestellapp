@@ -46,6 +46,7 @@ function addOrder(i) {
     if (EXISTING_ORDER) {
         document.getElementById("basket-order"+i.name).textContent = i.order;
     } else {
+        document.getElementById('empty-basket')?.remove();
         MY_ORDER.innerHTML += templateBasketOrder(i);
     }
 }

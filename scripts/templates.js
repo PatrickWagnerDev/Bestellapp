@@ -118,6 +118,7 @@ function templateBasket() {
                     </h2>
                 </header>
                 <section id="basket-orders" class="basket-order">
+                    <p id="empty-basket">Order now &#128522;</p>
                 </section>
                 <section class="price-wrapper">
                     <article class="price-part">
