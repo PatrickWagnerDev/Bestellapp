@@ -203,6 +203,18 @@ main {
     border-radius: 8px;
 }
 
+.basket-part button {
+    height: 16px;
+    padding: 0;
+    background-color: transparent;
+    border: 0 solid transparent;
+}
+
+.basket-title-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
 .basket-part-number {
     display: flex;
     justify-content: space-between;
@@ -259,6 +271,10 @@ main {
     width: 80%;
     font-weight: bold;
     border-top: 2px solid white;
+}
+
+.button-style {
+    cursor: pointer;
 }
 
 .footer-section {

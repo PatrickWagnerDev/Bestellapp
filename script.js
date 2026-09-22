@@ -66,3 +66,17 @@ function calculateSubtotal() {
     const allProducts = [products.burger, products.pizza, products.salad].flat();
     return allProducts.reduce((sum, i) => sum + i.price * i.order, 0);
 }
+
+function deleteOrder(i) {
+    
+}
+
+function plusOrder(i) {
+    i.order++;
+    document.getElementById("basket-order" + i.name).innerHTML = i.order;
+}
+
+function minusOrder(i) {
+    i.order--;
+    document.getElementById("basket-order" + i.name).innerHTML = i.order;
+}

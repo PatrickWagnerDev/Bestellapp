@@ -145,16 +145,21 @@ function templateBasket() {
 function templateBasketOrder(i) {
     return /*html*/`
         <article class="basket-part">
-            <p>
-                ${i.name}
-            </p>
+            <div class="basket-title-wrapper">
+                <p>
+                    ${i.name}
+                </p>
+                <button onclick="deleteOrder(${i})" class="button-style">
+                    <img src="assets/icons/delete_icon.png" alt="Delete Button">
+                </button>
+            </div>
             <div class="basket-part-number">
-                <div class="basket-number">
-                    <button>
-                        <img src="assets/icons/delete_icon.png" alt="Delete Button">
-                    </button>
+                <div class="basket-number">   
+                    <button onclick="minusOrder(${i})" class="button-style">
+                        -
+                    </button> 
                     <p id="basket-order${i.name}">${i.order}</p>
-                    <button>
+                    <button onclick="plusOrder(${i})" class="button-style">
                         +
                     </button>
                 </div>
