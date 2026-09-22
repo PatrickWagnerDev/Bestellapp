@@ -1,10 +1,14 @@
 const MY_MENU = document.getElementById('menu-content');
 const MY_BASKET = document.getElementById('basket-content');
+const MY_NAV_BASKET = document.getElementById('nav-basket-content');
+const BASKET_BREAKPOINT = window.matchMedia('(min-width: 1461px)');
+let BASKET_DOM = "";
 
 
 function init() {
     renderMenu();
     renderBasket();
+    BASKET_BREAKPOINT.addEventListener('change', placeBasket);
 }
 
 function renderMenu() {
@@ -36,7 +40,18 @@ function renderSalad(array) {
 }
 
 function renderBasket() {
-    MY_BASKET.innerHTML = templateBasket();
+    const BASKET_WRAPPER = document.createElement('div');
+    BASKET_WRAPPER.innerHTML = templateBasket();
+    BASKET_DOM = BASKET_WRAPPER.firstElementChild;
+    placeBasket(BASKET_BREAKPOINT);
+}
+
+function placeBasket(i) {
+    if (i.matches) {
+        document.getElementById('basket-content').appendChild(BASKET_DOM);
+    } else {
+        document.getElementById('nav-basket-content').appendChild(BASKET_DOM);
+    }
 }
 
 function addOrder(i) {
@@ -94,8 +109,11 @@ function minusOrder(i) {
 
 function updatePrices() {
     const SUBTOTAL_PRICE = calculateSubtotal();
-     if (SUBTOTAL_PRICE === 0) {
+    let TOTAL_PRICE = "";
+    if (SUBTOTAL_PRICE === 0) {
         TOTAL_PRICE = 0;
+        document.getElementById('basket-orders').innerHTML = '<p id="empty-basket">Order now &#128522;</p>';
+        document.getElementById('price-wrapper').style.display = "none";
     } else {
         TOTAL_PRICE = SUBTOTAL_PRICE + 4.99;
     }
