@@ -337,6 +337,7 @@ main {
     }
 
     .basket-dialog {
+        flex-direction: column;
         background-color: var(--secondary-color);
         color: white;
         position: sticky;
@@ -344,6 +345,16 @@ main {
         left: calc(50% - 155px);
         border: 0 solid transparent;
         border-radius: 16px;
+    }
+
+    .basket-dialog>button {
+        height: 16px;
+        padding: 0;
+        background-color: transparent;
+        border: 0 solid transparent;
+        color: white;
+        text-align: end;
+        font-weight: bold;
     }
 
     .basket-dialog[open] {
@@ -394,6 +405,7 @@ main {
     }
 
     .basket-dialog {
+        flex-direction: column;
         background-color: var(--secondary-color);
         color: white;
         position: sticky;
@@ -401,6 +413,16 @@ main {
         left: calc(50% - 155px);
         border: 0 solid transparent;
         border-radius: 16px;
+    }
+
+    .basket-dialog>button {
+        height: 16px;
+        padding: 0;
+        background-color: transparent;
+        border: 0 solid transparent;
+        color: white;
+        text-align: end;
+        font-weight: bold;
     }
 
     .basket-dialog[open] {
@@ -468,6 +490,7 @@ main {
     }
 
     .basket-dialog {
+        flex-direction: column;
         background-color: var(--secondary-color);
         color: white;
         position: sticky;
@@ -475,6 +498,16 @@ main {
         left: calc(50% - 155px);
         border: 0 solid transparent;
         border-radius: 16px;
+    }
+
+    .basket-dialog>button {
+        height: 16px;
+        padding: 0;
+        background-color: transparent;
+        border: 0 solid transparent;
+        color: white;
+        text-align: end;
+        font-weight: bold;
     }
 
     .basket-dialog[open] {
