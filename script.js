@@ -121,3 +121,11 @@ function updatePrices() {
     document.getElementById('total-price').textContent = TOTAL_PRICE.toFixed(2).replace(".", ",") + "€";
     document.getElementById('buy-now-price').textContent = "Buy now (" + TOTAL_PRICE.toFixed(2).replace(".", ",") + "€)";
 }
+
+function openNavBasket() {
+    MY_NAV_BASKET.showModal();
+}
+
+function closeNavBasket() {
+    MY_NAV_BASKET.close();
+}

@@ -337,7 +337,6 @@ main {
     }
 
     .basket-dialog {
-        display: flex;
         background-color: var(--secondary-color);
         color: white;
         position: sticky;
@@ -345,6 +344,10 @@ main {
         left: calc(50% - 155px);
         border: 0 solid transparent;
         border-radius: 16px;
+    }
+
+    .basket-dialog[open] {
+        display: flex;
     }
 }
 
@@ -391,7 +394,6 @@ main {
     }
 
     .basket-dialog {
-        display: flex;
         background-color: var(--secondary-color);
         color: white;
         position: sticky;
@@ -399,6 +401,10 @@ main {
         left: calc(50% - 155px);
         border: 0 solid transparent;
         border-radius: 16px;
+    }
+
+    .basket-dialog[open] {
+        display: flex;
     }
 
     .footer-section {
@@ -462,7 +468,6 @@ main {
     }
 
     .basket-dialog {
-        display: flex;
         background-color: var(--secondary-color);
         color: white;
         position: sticky;
@@ -470,6 +475,10 @@ main {
         left: calc(50% - 155px);
         border: 0 solid transparent;
         border-radius: 16px;
+    }
+
+    .basket-dialog[open] {
+        display: flex;
     }
 
     .footer-section {

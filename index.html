@@ -38,14 +38,16 @@
             <section id="basket-content" class="basket-wrapper"></section>
         </div>
     </main>
-    <dialog id="nav-basket-content" class="basket-dialog"></dialog>
+    <dialog id="nav-basket-content" class="basket-dialog">
+        <button onclick="closeNavBasket()" class="button-style">X</button>
+    </dialog>
     <footer class="footer-section">
         <p>&copy; BurgerHouse</p>
         <a href="#">Imprint</a>
         <a href="#">Cookie Preferences</a>
     </footer>
     <nav class="nav-basket">
-        <button class="nav-basketbutton">
+        <button onclick="openNavBasket()" class="nav-basketbutton">
             <img src="assets/icons/basket_icon.png" alt="Basket Icon">
             <p>
                 Your Basket
