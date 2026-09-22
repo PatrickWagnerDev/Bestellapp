@@ -340,7 +340,8 @@ main {
         flex-direction: column;
         background-color: var(--secondary-color);
         color: white;
-        position: sticky;
+        position: fixed;
+        top: auto;
         bottom: 0;
         left: calc(50% - 155px);
         border: 0 solid transparent;
@@ -408,7 +409,8 @@ main {
         flex-direction: column;
         background-color: var(--secondary-color);
         color: white;
-        position: sticky;
+        position: fixed;
+        top: auto;
         bottom: 0;
         left: calc(50% - 155px);
         border: 0 solid transparent;
@@ -493,7 +495,8 @@ main {
         flex-direction: column;
         background-color: var(--secondary-color);
         color: white;
-        position: sticky;
+        position: fixed;
+        top: auto;
         bottom: 0;
         left: calc(50% - 155px);
         border: 0 solid transparent;
