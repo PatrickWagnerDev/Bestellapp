@@ -149,17 +149,17 @@ function templateBasketOrder(i) {
                 <p>
                     ${i.name}
                 </p>
-                <button onclick="deleteOrder(${i})" class="button-style">
+                <button onclick="deleteOrder('${i.name}')" class="button-style">
                     <img src="assets/icons/delete_icon.png" alt="Delete Button">
                 </button>
             </div>
             <div class="basket-part-number">
                 <div class="basket-number">   
-                    <button onclick="minusOrder(${i})" class="button-style">
+                    <button onclick="minusOrder('${i.name}')" class="button-style">
                         -
                     </button> 
                     <p id="basket-order${i.name}">${i.order}</p>
-                    <button onclick="plusOrder(${i})" class="button-style">
+                    <button onclick="plusOrder('${i.name}')" class="button-style">
                         +
                     </button>
                 </div>

@@ -63,20 +63,43 @@ function addOrder(i) {
 }
 
 function calculateSubtotal() {
-    const allProducts = [products.burger, products.pizza, products.salad].flat();
-    return allProducts.reduce((sum, i) => sum + i.price * i.order, 0);
+    const ALL_ORDERS = [products.burger, products.pizza, products.salad].flat();
+    return ALL_ORDERS.reduce((sum, i) => sum + i.price * i.order, 0);
 }
 
 function deleteOrder(i) {
-    
+    const ALL_ORDERS = [products.burger, products.pizza, products.salad].flat().find(p => p.name === i);
+    document.getElementById("basket-order" + ALL_ORDERS.name).closest(".basket-part").remove();
+    ALL_ORDERS.order = 0;
+    updatePrices();
 }
 
 function plusOrder(i) {
-    i.order++;
-    document.getElementById("basket-order" + i.name).innerHTML = i.order;
+    const ALL_ORDERS = [products.burger, products.pizza, products.salad].flat().find(p => p.name === i);
+    ALL_ORDERS.order++;
+    document.getElementById("basket-order" + ALL_ORDERS.name).innerHTML = ALL_ORDERS.order;
+    updatePrices();
 }
 
 function minusOrder(i) {
-    i.order--;
-    document.getElementById("basket-order" + i.name).innerHTML = i.order;
+    const ALL_ORDERS = [products.burger, products.pizza, products.salad].flat().find(p => p.name === i);
+    ALL_ORDERS.order--;
+    if (ALL_ORDERS.order === 0) {
+        document.getElementById("basket-order" + ALL_ORDERS.name).closest(".basket-part").remove();
+    } else {
+        document.getElementById("basket-order" + ALL_ORDERS.name).innerHTML = ALL_ORDERS.order;
+    }
+    updatePrices();
+}
+
+function updatePrices() {
+    const SUBTOTAL_PRICE = calculateSubtotal();
+     if (SUBTOTAL_PRICE === 0) {
+        TOTAL_PRICE = 0;
+    } else {
+        TOTAL_PRICE = SUBTOTAL_PRICE + 4.99;
+    }
+    document.getElementById('subtotal-price').textContent = SUBTOTAL_PRICE.toFixed(2).replace(".", ",") + "€";
+    document.getElementById('total-price').textContent = TOTAL_PRICE.toFixed(2).replace(".", ",") + "€";
+    document.getElementById('buy-now-price').textContent = "Buy now (" + TOTAL_PRICE.toFixed(2).replace(".", ",") + "€)";
 }
