@@ -41,12 +41,28 @@ function renderBasket() {
 
 function addOrder(i) {
     const MY_ORDER = document.getElementById('basket-orders');
-    const EXISTING_ORDER = document.getElementById("basket-order"+i.name);
+    const EXISTING_ORDER = document.getElementById("basket-order" + i.name);
     i.order++;
+    const SUBTOTAL_PRICE = calculateSubtotal();
+    let TOTAL_PRICE = "";
     if (EXISTING_ORDER) {
-        document.getElementById("basket-order"+i.name).textContent = i.order;
+        document.getElementById("basket-order" + i.name).innerHTML = i.order;
     } else {
         document.getElementById('empty-basket')?.remove();
         MY_ORDER.innerHTML += templateBasketOrder(i);
+        document.getElementById('price-wrapper').style.display = "flex";
+    };
+    if (SUBTOTAL_PRICE === 0) {
+        TOTAL_PRICE = 0;
+    } else {
+        TOTAL_PRICE = SUBTOTAL_PRICE + 4.99;
     }
+    document.getElementById('subtotal-price').innerHTML = SUBTOTAL_PRICE.toFixed(2).replace(".", ",") + "€";
+    document.getElementById('total-price').innerHTML = TOTAL_PRICE.toFixed(2).replace(".", ",") + "€";
+    document.getElementById('buy-now-price').innerHTML = "Buy now (" + TOTAL_PRICE.toFixed(2).replace(".", ",") + "€)";
+}
+
+function calculateSubtotal() {
+    const allProducts = [products.burger, products.pizza, products.salad].flat();
+    return allProducts.reduce((sum, i) => sum + i.price * i.order, 0);
 }

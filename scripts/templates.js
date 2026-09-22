@@ -120,10 +120,10 @@ function templateBasket() {
                 <section id="basket-orders" class="basket-order">
                     <p id="empty-basket">Order now &#128522;</p>
                 </section>
-                <section class="price-wrapper">
+                <section id="price-wrapper" class="price-wrapper" style="display: none">
                     <article class="price-part">
                         <p>Subtotal</p>
-                        <p>36,70€</p>
+                        <p id="subtotal-price">${calculateSubtotal().toFixed(2).replace(".", ",")}€</p>
                     </article>
                     <article class="price-part">
                         <p>Delivery fee</p>
@@ -131,10 +131,10 @@ function templateBasket() {
                     </article>
                     <article class="price-part-total">
                         <p>Total</p>
-                        <p>41,69€</p>
+                        <p id="total-price">0,00€</p>
                     </article>
                     <button>
-                        <p>Buy now (41,69€)</p>
+                        <p id="buy-now-price">Buy now (0,00€)</p>
                     </button>
                 </section>
             </div>
