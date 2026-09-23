@@ -9,11 +9,11 @@ function init() {
     renderMenu();
     renderBasket();
     BASKET_BREAKPOINT.addEventListener('change', placeBasket);
-    MY_NAV_BASKET.addEventListener('click', function(i) {
-    if (i.target === MY_NAV_BASKET) {
-        MY_NAV_BASKET.close();
-    }
-});
+    MY_NAV_BASKET.addEventListener('click', function (i) {
+        if (i.target === MY_NAV_BASKET) {
+            MY_NAV_BASKET.close();
+        }
+    });
 }
 
 function renderMenu() {
@@ -129,6 +129,7 @@ function updatePrices() {
 
 function openNavBasket() {
     MY_NAV_BASKET.showModal();
+    document.getElementById('nav-basket-footer')?.remove();
 }
 
 function closeNavBasket() {
