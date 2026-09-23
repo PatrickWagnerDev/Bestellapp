@@ -390,6 +390,11 @@ main {
     .basket-dialog[open] {
         display: flex;
     }
+
+    .basket-dialog::backdrop {
+        background-color: rgba(128, 128, 128, 0.418);
+        backdrop-filter: blur(2px);
+    }
 }
 
 @media screen and (min-width: 470px) and (max-width: 990px) {
@@ -458,6 +463,11 @@ main {
 
     .basket-dialog[open] {
         display: flex;
+    }
+
+    .basket-dialog::backdrop {
+        background-color: rgba(128, 128, 128, 0.418);
+        backdrop-filter: blur(2px);
     }
 
     .footer-section {
@@ -544,6 +554,11 @@ main {
 
     .basket-dialog[open] {
         display: flex;
+    }
+
+    .basket-dialog::backdrop {
+        background-color: rgba(128, 128, 128, 0.418);
+        backdrop-filter: blur(2px);
     }
 
     .footer-section {
