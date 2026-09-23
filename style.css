@@ -318,6 +318,23 @@ main {
     }
 }
 
+.confirmed-dialog {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 200px;
+    background-color: var(--secondary-color);
+    color: var(--option-background-color);
+    border: 0 solid transparent;
+    border-radius: 32px;
+}
+
+.confirmed-dialog img {
+    width: 48px;
+}
+
 @media screen and (min-width: 991px) and (max-width: 1460px) {
     .basket-wrapper {
         display: none;
