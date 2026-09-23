@@ -1,6 +1,7 @@
 const MY_MENU = document.getElementById('menu-content');
 const MY_BASKET = document.getElementById('basket-content');
 const MY_NAV_BASKET = document.getElementById('nav-basket-content');
+const CONFIRMED_DIALOG = document.getElementById('order-confirmed');
 const BASKET_BREAKPOINT = window.matchMedia('(min-width: 1461px)');
 let BASKET_DOM = "";
 
@@ -10,6 +11,7 @@ function init() {
     renderBasket();
     moveBasket();
     closeNavBasketOuterDialog();
+    closeConfirmedDialog();
 }
 
 function renderMenu() {
@@ -141,6 +143,24 @@ function closeNavBasketOuterDialog() {
     MY_NAV_BASKET.addEventListener('click', function (i) {
         if (i.target === MY_NAV_BASKET) {
             MY_NAV_BASKET.close();
+            document.getElementById('nav-basket-footer').style.display = "flex";
+        }
+    });
+}
+
+function openConfirmedDialog() {
+    CONFIRMED_DIALOG.showModal();
+    MY_NAV_BASKET.close();
+    document.getElementById('nav-basket-footer').style.display = "none";
+    const ALL_ORDERS = [products.burger, products.pizza, products.salad].flat().find(p => p.name === i);
+    ALL_ORDERS.order = 0;
+    updatePrices();
+}
+
+function closeConfirmedDialog() {
+    CONFIRMED_DIALOG.addEventListener('click', function (i) {
+        if (i.target === CONFIRMED_DIALOG) {
+            CONFIRMED_DIALOG.close();
             document.getElementById('nav-basket-footer').style.display = "flex";
         }
     });
