@@ -16,29 +16,15 @@ function init() {
 
 function renderMenu() {
     MY_MENU.innerHTML = templateMenu();
-    renderBurger(products.burger);
-    renderPizza(products.pizza);
-    renderSalad(products.salad);
+    renderMenuParts('burger-menu', products.burger, templateBurgerMenu);
+    renderMenuParts('pizza-menu', products.pizza, templatePizzaMenu);
+    renderMenuParts('salad-menu', products.salad, templateSaladMenu);
 }
 
-function renderBurger(array) {
-    const MY_BURGER = document.getElementById('burger-menu');
+function renderMenuParts(containerID, array, template) {
+    const MENU_PART = document.getElementById(containerID);
     for (let i = 0; i < array.length; i++) {
-        MY_BURGER.innerHTML += templateBurgerMenu(i);
-    }
-}
-
-function renderPizza(array) {
-    const MY_PIZZA = document.getElementById('pizza-menu');
-    for (let i = 0; i < array.length; i++) {
-        MY_PIZZA.innerHTML += templatePizzaMenu(i);
-    }
-}
-
-function renderSalad(array) {
-    const MY_SALAD = document.getElementById('salad-menu');
-    for (let i = 0; i < array.length; i++) {
-        MY_SALAD.innerHTML += templateSaladMenu(i);
+        MENU_PART.innerHTML += template(i);
     }
 }
 
@@ -58,11 +44,19 @@ function placeBasket(i) {
 }
 
 function addOrder(i) {
+    i.order++;
+    updateAddButton(i);
+    viewIfEmptyBasket(i);
+    const SUBTOTAL_PRICE = calculateSubtotal();
+    let TOTAL_PRICE = SUBTOTAL_PRICE + 4.99;
+    document.getElementById('subtotal-price').innerHTML = SUBTOTAL_PRICE.toFixed(2).replace(".", ",") + "€";
+    document.getElementById('total-price').innerHTML = TOTAL_PRICE.toFixed(2).replace(".", ",") + "€";
+    document.getElementById('buy-now-price').innerHTML = "Buy now (" + TOTAL_PRICE.toFixed(2).replace(".", ",") + "€)";
+}
+
+function viewIfEmptyBasket(i) {
     const MY_ORDER = document.getElementById('basket-orders');
     const EXISTING_ORDER = document.getElementById("basket-order" + i.name);
-    i.order++;
-    const SUBTOTAL_PRICE = calculateSubtotal();
-    let TOTAL_PRICE = "";
     if (EXISTING_ORDER) {
         document.getElementById("basket-order" + i.name).innerHTML = i.order;
     } else {
@@ -70,14 +64,19 @@ function addOrder(i) {
         MY_ORDER.innerHTML += templateBasketOrder(i);
         document.getElementById('price-wrapper').style.display = "flex";
     };
-    if (SUBTOTAL_PRICE === 0) {
-        TOTAL_PRICE = 0;
+}
+
+function updateAddButton(i) {
+    const ADD_BUTTON = document.getElementById("add-button" + i.name);
+    if (i.order > 0) {
+        ADD_BUTTON.textContent = "Added +" + i.order;
     } else {
-        TOTAL_PRICE = SUBTOTAL_PRICE + 4.99;
+        ADD_BUTTON.textContent = "Add to basket";
     }
-    document.getElementById('subtotal-price').innerHTML = SUBTOTAL_PRICE.toFixed(2).replace(".", ",") + "€";
-    document.getElementById('total-price').innerHTML = TOTAL_PRICE.toFixed(2).replace(".", ",") + "€";
-    document.getElementById('buy-now-price').innerHTML = "Buy now (" + TOTAL_PRICE.toFixed(2).replace(".", ",") + "€)";
+}
+
+function updateAllAddButtons() {
+    [products.burger, products.pizza, products.salad].flat().forEach(i => updateAddButton(i));
 }
 
 function calculateSubtotal() {
@@ -89,12 +88,14 @@ function deleteOrder(i) {
     const ALL_ORDERS = [products.burger, products.pizza, products.salad].flat().find(p => p.name === i);
     document.getElementById("basket-order" + ALL_ORDERS.name).closest(".basket-part").remove();
     ALL_ORDERS.order = 0;
+    updateAddButton(ALL_ORDERS);
     updatePrices();
 }
 
 function plusOrder(i) {
     const ALL_ORDERS = [products.burger, products.pizza, products.salad].flat().find(p => p.name === i);
     ALL_ORDERS.order++;
+    updateAddButton(ALL_ORDERS);
     document.getElementById("basket-order" + ALL_ORDERS.name).innerHTML = ALL_ORDERS.order;
     updatePrices();
 }
@@ -102,6 +103,7 @@ function plusOrder(i) {
 function minusOrder(i) {
     const ALL_ORDERS = [products.burger, products.pizza, products.salad].flat().find(p => p.name === i);
     ALL_ORDERS.order--;
+    updateAddButton(ALL_ORDERS);
     if (ALL_ORDERS.order === 0) {
         document.getElementById("basket-order" + ALL_ORDERS.name).closest(".basket-part").remove();
     } else {
@@ -127,7 +129,6 @@ function updatePrices() {
 
 function openNavBasket() {
     MY_NAV_BASKET.showModal();
-    // document.getElementById('nav-basket-footer').style.display = "none";
     document.getElementById('nav-basket-footer').classList.add('slide-down')
     requestAnimationFrame(() => {
         MY_NAV_BASKET.classList.add('slide-up');
@@ -158,6 +159,7 @@ function openConfirmedDialog() {
     CONFIRMED_DIALOG.showModal();
     MY_NAV_BASKET.close();
     [products.burger, products.pizza, products.salad].flat().forEach(p => p.order = 0);
+    updateAllAddButtons();
     updatePrices();
     setTimeout(() => {
         CONFIRMED_DIALOG.close();
