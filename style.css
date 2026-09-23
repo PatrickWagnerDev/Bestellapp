@@ -321,270 +321,271 @@ main {
 
 .nav-basket.slide-down {
     transform: translateY(100%);
+}
 
-    .confirmed-dialog {
-        flex-direction: column;
+.confirmed-dialog {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 200px;
+    background-color: var(--secondary-color);
+    color: var(--option-background-color);
+    border: 0 solid transparent;
+    border-radius: 32px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.confirmed-dialog img {
+    width: 48px;
+}
+
+.confirmed-dialog::backdrop {
+    background-color: rgba(128, 128, 128, 0.418);
+    backdrop-filter: blur(2px);
+}
+
+.confirmed-dialog[open] {
+    display: flex;
+}
+
+@media screen and (min-width: 991px) and (max-width: 1460px) {
+    .basket-wrapper {
+        display: none;
+    }
+
+    .nav-basket {
+        display: flex;
         justify-content: center;
-        align-items: center;
-        width: 250px;
-        height: 200px;
+        padding: 8px;
         background-color: var(--secondary-color);
-        color: var(--option-background-color);
-        border: 0 solid transparent;
-        border-radius: 32px;
+        position: sticky;
+        bottom: 0;
+    }
+
+    .basket-infill {
+        width: 280px;
+    }
+
+    .basket-dialog {
+        flex-direction: column;
+        background-color: var(--secondary-color);
+        color: white;
         position: fixed;
-        top: 50%;
+        top: auto;
+        bottom: 0;
         left: 50%;
-        transform: translate(-50%, -50%);
+        border: 0 solid transparent;
+        border-radius: 16px;
+        transform: translate(-50%, 100%);
+        transition: transform 255ms ease;
     }
 
-    .confirmed-dialog img {
-        width: 48px;
+    .basket-dialog>button {
+        height: 16px;
+        padding: 0;
+        background-color: transparent;
+        border: 0 solid transparent;
+        color: white;
+        text-align: end;
+        font-weight: bold;
     }
 
-    .confirmed-dialog::backdrop {
+    .basket-dialog[open] {
+        display: flex;
+    }
+
+    .basket-dialog::backdrop {
         background-color: rgba(128, 128, 128, 0.418);
         backdrop-filter: blur(2px);
     }
 
-    .confirmed-dialog[open] {
+    .basket-dialog.slide-up {
+        transform: translate(-50%, 0);
+    }
+}
+
+@media screen and (min-width: 470px) and (max-width: 990px) {
+    .menu-part {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        background-color: var(--option-background-color);
+        padding: 8px;
+        border-radius: 16px;
+        width: clamp(300px, 90%, 750px);
+    }
+
+    .menu-part img {
+        display: block;
+        width: 100%;
+        max-height: 100px;
+        object-fit: cover;
+        border-radius: 16px;
+    }
+
+    .menu-description {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+    }
+
+    .basket-wrapper {
+        display: none;
+    }
+
+    .basket-infill {
+        width: 280px;
+    }
+
+    .nav-basket {
+        display: flex;
+        justify-content: center;
+        padding: 8px;
+        background-color: var(--secondary-color);
+        position: sticky;
+        bottom: 0;
+    }
+
+    .basket-dialog {
+        flex-direction: column;
+        background-color: var(--secondary-color);
+        color: white;
+        position: fixed;
+        top: auto;
+        bottom: 0;
+        left: 50%;
+        border: 0 solid transparent;
+        border-radius: 16px;
+        transform: translate(-50%, 100%);
+        transition: transform 255ms ease;
+    }
+
+    .basket-dialog>button {
+        height: 16px;
+        padding: 0;
+        background-color: transparent;
+        border: 0 solid transparent;
+        color: white;
+        text-align: end;
+        font-weight: bold;
+    }
+
+    .basket-dialog[open] {
         display: flex;
     }
 
-    @media screen and (min-width: 991px) and (max-width: 1460px) {
-        .basket-wrapper {
-            display: none;
-        }
-
-        .nav-basket {
-            display: flex;
-            justify-content: center;
-            padding: 8px;
-            background-color: var(--secondary-color);
-            position: sticky;
-            bottom: 0;
-        }
-
-        .basket-infill {
-            width: 280px;
-        }
-
-        .basket-dialog {
-            flex-direction: column;
-            background-color: var(--secondary-color);
-            color: white;
-            position: fixed;
-            top: auto;
-            bottom: 0;
-            left: calc(50% - 155px);
-            border: 0 solid transparent;
-            border-radius: 16px;
-            transform: translateY(100%);
-            transition: transform 255ms ease;
-        }
-
-        .basket-dialog>button {
-            height: 16px;
-            padding: 0;
-            background-color: transparent;
-            border: 0 solid transparent;
-            color: white;
-            text-align: end;
-            font-weight: bold;
-        }
-
-        .basket-dialog[open] {
-            display: flex;
-        }
-
-        .basket-dialog::backdrop {
-            background-color: rgba(128, 128, 128, 0.418);
-            backdrop-filter: blur(2px);
-        }
-
-        .basket-dialog.slide-up {
-            transform: translateY(0);
-        }
+    .basket-dialog::backdrop {
+        background-color: rgba(128, 128, 128, 0.418);
+        backdrop-filter: blur(2px);
     }
 
-    @media screen and (min-width: 470px) and (max-width: 990px) {
-        .menu-part {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            background-color: var(--option-background-color);
-            padding: 8px;
-            border-radius: 16px;
-            width: clamp(300px, 90%, 750px);
-        }
-
-        .menu-part img {
-            display: block;
-            width: 100%;
-            max-height: 100px;
-            object-fit: cover;
-            border-radius: 16px;
-        }
-
-        .menu-description {
-            display: flex;
-            justify-content: space-between;
-            gap: 16px;
-        }
-
-        .basket-wrapper {
-            display: none;
-        }
-
-        .basket-infill {
-            width: 280px;
-        }
-
-        .nav-basket {
-            display: flex;
-            justify-content: center;
-            padding: 8px;
-            background-color: var(--secondary-color);
-            position: sticky;
-            bottom: 0;
-        }
-
-        .basket-dialog {
-            flex-direction: column;
-            background-color: var(--secondary-color);
-            color: white;
-            position: fixed;
-            top: auto;
-            bottom: 0;
-            left: calc(50% - 155px);
-            border: 0 solid transparent;
-            border-radius: 16px;
-            transform: translateY(100%);
-            transition: transform 255ms ease;
-        }
-
-        .basket-dialog>button {
-            height: 16px;
-            padding: 0;
-            background-color: transparent;
-            border: 0 solid transparent;
-            color: white;
-            text-align: end;
-            font-weight: bold;
-        }
-
-        .basket-dialog[open] {
-            display: flex;
-        }
-
-        .basket-dialog::backdrop {
-            background-color: rgba(128, 128, 128, 0.418);
-            backdrop-filter: blur(2px);
-        }
-
-        .basket-dialog.slide-up {
-            transform: translateY(0);
-        }
-
-        .footer-section {
-            flex-direction: column;
-            gap: 0;
-        }
+    .basket-dialog.slide-up {
+        transform: translate(-50%, 0);
     }
 
-    @media screen and (max-width: 469px) {
-        .menu-header {
-            flex-direction: column;
-            align-items: center;
-            padding: 0;
-            gap: 0;
-        }
-
-        .menu-header img {
-            width: 64px;
-            margin-top: -40px;
-        }
-
-        .menu-part {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            background-color: var(--option-background-color);
-            padding: 8px;
-            border-radius: 16px;
-            width: clamp(300px, 90%, 750px);
-        }
-
-        .menu-part img {
-            display: block;
-            width: 100%;
-            max-height: 100px;
-            object-fit: cover;
-            border-radius: 16px;
-        }
-
-        .menu-description {
-            display: flex;
-            justify-content: space-between;
-            gap: 16px;
-        }
-
-        .basket-wrapper {
-            display: none;
-        }
-
-        .basket-infill {
-            width: 280px;
-        }
-
-        .nav-basket {
-            display: flex;
-            justify-content: center;
-            padding: 8px;
-            background-color: var(--secondary-color);
-            position: sticky;
-            bottom: 0;
-        }
-
-        .basket-dialog {
-            flex-direction: column;
-            background-color: var(--secondary-color);
-            color: white;
-            position: fixed;
-            top: auto;
-            bottom: 0;
-            left: calc(50% - 155px);
-            border: 0 solid transparent;
-            border-radius: 16px;
-            transform: translateY(100%);
-            transition: transform 255ms ease;
-        }
-
-        .basket-dialog>button {
-            height: 16px;
-            padding: 0;
-            background-color: transparent;
-            border: 0 solid transparent;
-            color: white;
-            text-align: end;
-            font-weight: bold;
-        }
-
-        .basket-dialog[open] {
-            display: flex;
-        }
-
-        .basket-dialog::backdrop {
-            background-color: rgba(128, 128, 128, 0.418);
-            backdrop-filter: blur(2px);
-        }
-
-        .basket-dialog.slide-up {
-            transform: translateY(0);
-        }
-
-        .footer-section {
-            flex-direction: column;
-            gap: 0;
-        }
+    .footer-section {
+        flex-direction: column;
+        gap: 0;
     }
+}
+
+@media screen and (max-width: 469px) {
+    .menu-header {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        gap: 0;
+    }
+
+    .menu-header img {
+        width: 64px;
+        margin-top: -40px;
+    }
+
+    .menu-part {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        background-color: var(--option-background-color);
+        padding: 8px;
+        border-radius: 16px;
+        width: clamp(300px, 90%, 750px);
+    }
+
+    .menu-part img {
+        display: block;
+        width: 100%;
+        max-height: 100px;
+        object-fit: cover;
+        border-radius: 16px;
+    }
+
+    .menu-description {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+    }
+
+    .basket-wrapper {
+        display: none;
+    }
+
+    .basket-infill {
+        width: 280px;
+    }
+
+    .nav-basket {
+        display: flex;
+        justify-content: center;
+        padding: 8px;
+        background-color: var(--secondary-color);
+        position: sticky;
+        bottom: 0;
+    }
+
+    .basket-dialog {
+        flex-direction: column;
+        background-color: var(--secondary-color);
+        color: white;
+        position: fixed;
+        top: auto;
+        bottom: 0;
+        left: 50%;
+        border: 0 solid transparent;
+        border-radius: 16px;
+        transform: translate(-50%, 100%);
+        transition: transform 255ms ease;
+    }
+
+    .basket-dialog>button {
+        height: 16px;
+        padding: 0;
+        background-color: transparent;
+        border: 0 solid transparent;
+        color: white;
+        text-align: end;
+        font-weight: bold;
+    }
+
+    .basket-dialog[open] {
+        display: flex;
+    }
+
+    .basket-dialog::backdrop {
+        background-color: rgba(128, 128, 128, 0.418);
+        backdrop-filter: blur(2px);
+    }
+
+    .basket-dialog.slide-up {
+        transform: translate(-50%, 0);
+    }
+
+    .footer-section {
+        flex-direction: column;
+        gap: 0;
+    }
+}

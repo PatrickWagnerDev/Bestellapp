@@ -127,12 +127,17 @@ function updatePrices() {
 
 function openNavBasket() {
     MY_NAV_BASKET.showModal();
-    document.getElementById('nav-basket-footer').style.display = "none";
+    // document.getElementById('nav-basket-footer').style.display = "none";
+    document.getElementById('nav-basket-footer').classList.add('slide-down')
+    requestAnimationFrame(() => {
+        MY_NAV_BASKET.classList.add('slide-up');
+    });
 }
 
 function closeNavBasket() {
     MY_NAV_BASKET.close();
-    document.getElementById('nav-basket-footer').style.display = "flex";
+    MY_NAV_BASKET.classList.remove('slide-up');
+    document.getElementById('nav-basket-footer').classList.remove('slide-down');
 }
 
 function moveBasket() {
@@ -143,7 +148,8 @@ function closeNavBasketOuterDialog() {
     MY_NAV_BASKET.addEventListener('click', function (i) {
         if (i.target === MY_NAV_BASKET) {
             MY_NAV_BASKET.close();
-            document.getElementById('nav-basket-footer').style.display = "flex";
+            MY_NAV_BASKET.classList.remove('slide-up');
+            document.getElementById('nav-basket-footer').classList.remove('slide-down');
         }
     });
 }
