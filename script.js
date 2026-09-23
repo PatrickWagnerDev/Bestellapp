@@ -9,6 +9,11 @@ function init() {
     renderMenu();
     renderBasket();
     BASKET_BREAKPOINT.addEventListener('change', placeBasket);
+    MY_NAV_BASKET.addEventListener('click', function(i) {
+    if (i.target === MY_NAV_BASKET) {
+        MY_NAV_BASKET.close();
+    }
+});
 }
 
 function renderMenu() {
