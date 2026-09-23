@@ -133,7 +133,7 @@ function templateBasket() {
                         <p>Total</p>
                         <p id="total-price">0,00€</p>
                     </article>
-                    <button>
+                    <button onclick="">
                         <p id="buy-now-price">Buy now (0,00€)</p>
                     </button>
                 </section>
