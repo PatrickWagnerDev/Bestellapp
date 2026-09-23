@@ -9,12 +9,7 @@ function init() {
     renderMenu();
     renderBasket();
     moveBasket();
-    MY_NAV_BASKET.addEventListener('click', function (i) {
-        if (i.target === MY_NAV_BASKET) {
-            MY_NAV_BASKET.close();
-            document.getElementById('nav-basket-footer').style.display = "flex";
-        }
-    });
+    closeNavBasketOuterDialog();
 }
 
 function renderMenu() {
@@ -140,4 +135,13 @@ function closeNavBasket() {
 
 function moveBasket() {
     BASKET_BREAKPOINT.addEventListener('change', placeBasket);
+}
+
+function closeNavBasketOuterDialog() {
+    MY_NAV_BASKET.addEventListener('click', function (i) {
+        if (i.target === MY_NAV_BASKET) {
+            MY_NAV_BASKET.close();
+            document.getElementById('nav-basket-footer').style.display = "flex";
+        }
+    });
 }
