@@ -8,7 +8,7 @@ let BASKET_DOM = "";
 function init() {
     renderMenu();
     renderBasket();
-    BASKET_BREAKPOINT.addEventListener('change', placeBasket);
+    moveBasket();
     MY_NAV_BASKET.addEventListener('click', function (i) {
         if (i.target === MY_NAV_BASKET) {
             MY_NAV_BASKET.close();
@@ -136,4 +136,8 @@ function openNavBasket() {
 function closeNavBasket() {
     MY_NAV_BASKET.close();
     document.getElementById('nav-basket-footer').style.display = "flex";
+}
+
+function moveBasket() {
+    BASKET_BREAKPOINT.addEventListener('change', placeBasket);
 }
