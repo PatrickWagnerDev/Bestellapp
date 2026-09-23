@@ -297,7 +297,6 @@ main {
 
 .nav-basket {
     display: none;
-    transition: transform 255ms ease;
 }
 
 .nav-basket button {
@@ -317,10 +316,6 @@ main {
         background-color: var(--button-hover);
         box-shadow: 2px 2px 2px black;
     }
-}
-
-.nav-basket.slide-down {
-    transform: translateY(100%);
 }
 
 .confirmed-dialog {
@@ -364,6 +359,11 @@ main {
         background-color: var(--secondary-color);
         position: sticky;
         bottom: 0;
+        transition: transform 255ms ease;
+    }
+
+    .nav-basket.slide-down {
+        transform: translateY(100%);
     }
 
     .basket-infill {
@@ -448,6 +448,11 @@ main {
         background-color: var(--secondary-color);
         position: sticky;
         bottom: 0;
+        transition: transform 255ms ease;
+    }
+
+    .nav-basket.slide-down {
+        transform: translateY(100%);
     }
 
     .basket-dialog {
@@ -545,6 +550,11 @@ main {
         background-color: var(--secondary-color);
         position: sticky;
         bottom: 0;
+        transition: transform 255ms ease;
+    }
+
+    .nav-basket.slide-down {
+        transform: translateY(100%);
     }
 
     .basket-dialog {

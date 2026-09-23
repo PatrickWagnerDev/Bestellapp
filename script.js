@@ -157,12 +157,12 @@ function closeNavBasketOuterDialog() {
 function openConfirmedDialog() {
     CONFIRMED_DIALOG.showModal();
     MY_NAV_BASKET.close();
-    document.getElementById('nav-basket-footer').style.display = "none";
     [products.burger, products.pizza, products.salad].flat().forEach(p => p.order = 0);
     updatePrices();
     setTimeout(() => {
         CONFIRMED_DIALOG.close();
-        document.getElementById('nav-basket-footer').style.display = "flex";
+        MY_NAV_BASKET.classList.remove('slide-up');
+        document.getElementById('nav-basket-footer').classList.remove('slide-down');
     }, 3000);
 }
 
@@ -170,7 +170,8 @@ function closeConfirmedDialog() {
     CONFIRMED_DIALOG.addEventListener('click', function (i) {
         if (i.target === CONFIRMED_DIALOG) {
             CONFIRMED_DIALOG.close();
-            document.getElementById('nav-basket-footer').style.display = "flex";
+            MY_NAV_BASKET.classList.remove('slide-up');
+            document.getElementById('nav-basket-footer').classList.remove('slide-down');
         }
     });
 }
