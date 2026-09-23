@@ -319,7 +319,6 @@ main {
 }
 
 .confirmed-dialog {
-    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -333,6 +332,15 @@ main {
 
 .confirmed-dialog img {
     width: 48px;
+}
+
+.confirmed-dialog::backdrop {
+    background-color: rgba(128, 128, 128, 0.418);
+    backdrop-filter: blur(2px);
+}
+
+.confirmed-dialog[open] {
+    display: flex;
 }
 
 @media screen and (min-width: 991px) and (max-width: 1460px) {
