@@ -328,6 +328,10 @@ main {
     color: var(--option-background-color);
     border: 0 solid transparent;
     border-radius: 32px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .confirmed-dialog img {

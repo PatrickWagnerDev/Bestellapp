@@ -152,9 +152,12 @@ function openConfirmedDialog() {
     CONFIRMED_DIALOG.showModal();
     MY_NAV_BASKET.close();
     document.getElementById('nav-basket-footer').style.display = "none";
-    const ALL_ORDERS = [products.burger, products.pizza, products.salad].flat().find(p => p.name === i);
-    ALL_ORDERS.order = 0;
+    [products.burger, products.pizza, products.salad].flat().forEach(p => p.order = 0);
     updatePrices();
+    setTimeout(() => {
+        CONFIRMED_DIALOG.close();
+        document.getElementById('nav-basket-footer').style.display = "flex";
+    }, 3000);
 }
 
 function closeConfirmedDialog() {
