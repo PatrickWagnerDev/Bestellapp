@@ -18,7 +18,7 @@ Bestellapp is an exam project for a Frontend Web Developer Bootcamp, focusing on
 
 ## Project Status
 
-> **Current Status:** In Progress
+> **Current Status:** Completed
 <!--
 PROJECT STATUS:
 Update only the "Current Status" and the text above whenever the project progresses.
